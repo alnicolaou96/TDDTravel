@@ -19,7 +19,7 @@ namespace TDDTravel.Tests
         [Test]
         public void Test_Lastname_Prop()
         {
-            var trav = new TravelTDD(" ","LName");
+            var trav = new TravelTDD(" ", "LName");
             var result = trav.LastName;
             Assert.That(result, Is.EqualTo("LName"));
         }
@@ -37,6 +37,41 @@ namespace TDDTravel.Tests
             var result = trav.Email;
             Assert.That(result, Is.EqualTo("Email"));
         }
+        [Test]
+        public void Test_Start_Month_Prop()
+        {
+            var trav = new TravelTDD("", "", "", "", 1);
+            var result = trav.StartMonth;
+            Assert.That(result, Is.EqualTo(1));
 
+        }
+        [Test]
+        public void Test_Start_Day_Prop()
+        {
+            var trav = new TravelTDD("", "", "", "", 1,2);
+            var result = trav.StartDay;
+            Assert.That(result, Is.EqualTo(2));
+        }
+        [Test]
+        public void Test_Start_Year_Prop()
+        {
+            var trav = new TravelTDD("", "", "", "", 1, 2, 3);
+            var result = trav.StartYear;
+            Assert.That(result, Is.EqualTo(3));
+        }
+        [Test]
+        public void Test_GetDate()
+        {
+            var trav = new TravelTDD();
+            var result = trav.GetDate(9,8,2018);
+            Assert.That(result, Is.EqualTo("9/8/2018"));
+        }
+        [Test]
+        public void Test_Total_Travel_Time()
+        {
+            var trav = new TravelTDD();
+            var result = trav.TotalTravelTime(9, 13, 2018);
+            Assert.That(result, Is.EqualTo(5));
+        }
     }
 }
