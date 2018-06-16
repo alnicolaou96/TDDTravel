@@ -145,5 +145,47 @@ namespace TDDTravel.Tests
             var result = trav.Selection(1);
             Assert.That(result, Is.EqualTo("Put In Bay"));
         }
+
+        [Test]
+        public void Test_Selection_Method_Returns_StayHome()
+        {
+            var trav = new TravelTDD();
+            var result = trav.Selection(0);
+            Assert.That(result, Is.EqualTo("Stay Home"));
+        }
+
+        [Test]
+        public void Test_Selection_Method_Input_Greater_Than_5()
+        {
+            var trav = new TravelTDD();
+            var result = trav.Selection(6);
+            Assert.That(result, Is.EqualTo("The World Is Yours"));
+        }
+
+        [Test]
+        public void Destination_Class_Instansiation()
+        {
+            var trav = new Destination();
+            var result = trav.Selection(6);
+            Assert.That(result, Is.EqualTo("The World Is Yours"));
+        }
+
+        [Test]
+        public void Selection_Method_5_Destination_TTT_Method_Input()
+        {
+            var trav = new Destination();
+            var TTT = trav.TotalTravelTime(9, 14, 2018);
+            var result = trav.Selection(TTT);
+            Assert.That(result, Is.EqualTo("The World Is Yours"));
+        }
+
+        [Test]
+        public void Selection_Method_3_Destination_TTT_Method_Input()
+        {
+            var trav = new Destination();
+            var TTT = trav.TotalTravelTime(9, 13, 2018);
+            var result = trav.Selection(TTT);
+            Assert.That(result, Is.EqualTo("California"));
+        }
     }
 }

@@ -124,6 +124,13 @@ namespace TDDTravel
                 case 1:
                     location = "Put In Bay";
                     break;
+                case 0:
+                    location = "Stay Home";
+                    break;
+            }
+            if (number > 5)
+            {
+                location = "The World Is Yours";
             }
             return location;
         }
