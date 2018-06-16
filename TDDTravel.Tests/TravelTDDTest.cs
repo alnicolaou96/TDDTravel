@@ -16,6 +16,7 @@ namespace TDDTravel.Tests
             var result = trav.FirstName;
             Assert.That(result, Is.EqualTo("FName"));
         }
+
         [Test]
         public void Test_Lastname_Prop()
         {
@@ -23,6 +24,7 @@ namespace TDDTravel.Tests
             var result = trav.LastName;
             Assert.That(result, Is.EqualTo("LName"));
         }
+
         [Test]
         public void Test_Address_Prop()
         {
@@ -30,6 +32,7 @@ namespace TDDTravel.Tests
             var result = trav.Address;
             Assert.That(result, Is.EqualTo("123 street name"));
         }
+
         [Test]
         public void Test_Email_Prop()
         {
@@ -37,6 +40,7 @@ namespace TDDTravel.Tests
             var result = trav.Email;
             Assert.That(result, Is.EqualTo("Email"));
         }
+
         [Test]
         public void Test_Start_Month_Prop()
         {
@@ -45,6 +49,7 @@ namespace TDDTravel.Tests
             Assert.That(result, Is.EqualTo(1));
 
         }
+
         [Test]
         public void Test_Start_Day_Prop()
         {
@@ -52,6 +57,7 @@ namespace TDDTravel.Tests
             var result = trav.StartDay;
             Assert.That(result, Is.EqualTo(2));
         }
+
         [Test]
         public void Test_Start_Year_Prop()
         {
@@ -59,6 +65,7 @@ namespace TDDTravel.Tests
             var result = trav.StartYear;
             Assert.That(result, Is.EqualTo(3));
         }
+
         [Test]
         public void Test_GetDate()
         {
@@ -66,6 +73,7 @@ namespace TDDTravel.Tests
             var result = trav.GetDate(9,8,2018);
             Assert.That(result, Is.EqualTo("9/8/2018"));
         }
+
         [Test]
         public void Test_Total_Travel_Time()
         {
@@ -96,6 +104,46 @@ namespace TDDTravel.Tests
             var trav = new TravelTDD();
             var result = trav.TotalTravelTime(11, 9, 2018);
             Assert.That(result, Is.EqualTo(61));
+        }
+
+        [Test]
+        public void Test_Selection_Method_Returns_California()
+        {
+            var trav = new TravelTDD();
+            var result = trav.Selection(5);
+            Assert.That(result, Is.EqualTo("California"));
+        }
+
+        [Test]
+        public void Test_Selection_Method_Returns_Georgia()
+        {
+            var trav = new TravelTDD();
+            var result = trav.Selection(4);
+            Assert.That(result, Is.EqualTo("Georgia"));
+        }
+
+        [Test]
+        public void Test_Selection_Method_Returns_Florida()
+        {
+            var trav = new TravelTDD();
+            var result = trav.Selection(3);
+            Assert.That(result, Is.EqualTo("Florida"));
+        }
+
+        [Test]
+        public void Test_Selection_Method_Returns_Nashville()
+        {
+            var trav = new TravelTDD();
+            var result = trav.Selection(2);
+            Assert.That(result, Is.EqualTo("Nashville"));
+        }
+
+        [Test]
+        public void Test_Selection_Method_Returns_PutInBay()
+        {
+            var trav = new TravelTDD();
+            var result = trav.Selection(1);
+            Assert.That(result, Is.EqualTo("Put In Bay"));
         }
     }
 }

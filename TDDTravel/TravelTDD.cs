@@ -80,7 +80,6 @@ namespace TDDTravel
             return date;
         }
 
-
         public int TotalTravelTime(int month, int day, int year)
         {
             int[] startDate = new int[3];
@@ -103,6 +102,30 @@ namespace TDDTravel
                 leavingDay = leavingDay + (30 * leavingMonth);
             }
             return leavingDay;
+        }
+
+        public string Selection(int number)
+        {
+            string location = "";
+            switch (number)
+            {
+                case 5:
+                    location = "California";
+                    break;
+                case 4:
+                    location = "Georgia";
+                    break;
+                case 3:
+                    location = "Florida";
+                    break;
+                case 2:
+                    location = "Nashville";
+                    break;
+                case 1:
+                    location = "Put In Bay";
+                    break;
+            }
+            return location;
         }
     }
 }
