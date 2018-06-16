@@ -187,5 +187,95 @@ namespace TDDTravel.Tests
             var result = trav.Selection(TTT);
             Assert.That(result, Is.EqualTo("California"));
         }
+
+
+        //Vehicle Class Tests
+        [Test]
+        public void Vehicle_Default_CTR()
+        {
+            var trav = new Vehicle("FName");
+            var result = trav.FirstName;
+            Assert.That(result, Is.EqualTo("FName"));
+        }
+
+        [Test]
+        public void Vehicle_Test_Lastname_Prop()
+        {
+            var trav = new Vehicle(" ", "LName");
+            var result = trav.LastName;
+            Assert.That(result, Is.EqualTo("LName"));
+        }
+
+        [Test]
+        public void Vehicle_Test_Address_Prop()
+        {
+            var trav = new Vehicle("", "", "123 street name");
+            var result = trav.Address;
+            Assert.That(result, Is.EqualTo("123 street name"));
+        }
+
+        [Test]
+        public void Vehicle_Test_Email_Prop()
+        {
+            var trav = new Vehicle("", "", "", "Email");
+            var result = trav.Email;
+            Assert.That(result, Is.EqualTo("Email"));
+        }
+
+        [Test]
+        public void Vehicle_Test_StartDate_Prop()
+        {
+            var trav = new Vehicle("", "", "", "","9/12/2018");
+            var result = trav.StartDate;
+            Assert.That(result, Is.EqualTo("9/12/2018"));
+        }
+
+        [Test]
+        public void Start_Date_Method()
+        {
+            var trav = new Vehicle();
+            var result = trav.GetDate(9,12,2018);
+            Assert.That(result, Is.EqualTo("9/12/2018"));
+        }
+
+        [Test]
+        public void Vehicle_Test_Total_Travel_Time()
+        {
+            var trav = new Vehicle();
+            var result = trav.TotalTravelTime(9, 13, 2018);
+            Assert.That(result, Is.EqualTo(5));
+        }
+
+        [Test]
+        public void Vehicle_Test_Total_Travel_Time_Convert_Years_To_Days()
+        {
+            var trav = new Vehicle();
+            var result = trav.TotalTravelTime(9, 8, 2019);
+            Assert.That(result, Is.EqualTo(365));
+        }
+
+        [Test]
+        public void Vehicle_Test_Total_Travel_Time_Convert_Months_To_Days()
+        {
+            var trav = new Vehicle();
+            var result = trav.TotalTravelTime(11, 8, 2018);
+            Assert.That(result, Is.EqualTo(60));
+        }
+
+        [Test]
+        public void Vehicle_Test_Total_Travel_Time_Convert_Months_To_Days_And_Adds_To_Days()
+        {
+            var trav = new Vehicle();
+            var result = trav.TotalTravelTime(11, 9, 2018);
+            Assert.That(result, Is.EqualTo(61));
+        }
+
+        [Test]
+        public void Vehicle_Virtual_Selection_Method()
+        {
+            var trav = new Vehicle();
+            var result = trav.Selection(1);
+            Assert.That(result, Is.EqualTo("California"));
+        }
     }
 }

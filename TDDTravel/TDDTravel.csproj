@@ -50,6 +50,7 @@
     <Compile Include="Destination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TravelTDD.cs" />
+    <Compile Include="Vehicle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
