@@ -79,16 +79,29 @@ namespace TDDTravel
 
             return date;
         }
+
+
         public int TotalTravelTime(int month, int day, int year)
         {
             int[] startDate = new int[3];
-            string date = "9/8/13";
+            string date = "9/8/2018";
             string[] split = date.Split('/');
             for(int i=0;i<3;i++)
             {
                 startDate[i] = int.Parse(split[i]);
             }
-            int leavingDay = day-startDate[1];
+            int leavingDay = day - startDate[1];
+            int leavingMonth = month - startDate[0];
+            int leavingYear = year - startDate[2];
+
+            if ( year > startDate[2])
+            {
+                leavingDay = leavingDay + (365 * leavingYear);
+            }
+            if ( month>startDate[0])
+            {
+                leavingDay = leavingDay + (30 * leavingMonth);
+            }
             return leavingDay;
         }
     }

@@ -73,5 +73,29 @@ namespace TDDTravel.Tests
             var result = trav.TotalTravelTime(9, 13, 2018);
             Assert.That(result, Is.EqualTo(5));
         }
+
+        [Test]
+        public void Test_Total_Travel_Time_Convert_Years_To_Days()
+        {
+            var trav = new TravelTDD();
+            var result = trav.TotalTravelTime(9, 8, 2019);
+            Assert.That(result, Is.EqualTo(365));
+        }
+
+        [Test]
+        public void Test_Total_Travel_Time_Convert_Months_To_Days()
+        {
+            var trav = new TravelTDD();
+            var result = trav.TotalTravelTime(11, 8, 2018);
+            Assert.That(result, Is.EqualTo(60));
+        }
+
+        [Test]
+        public void Test_Total_Travel_Time_Convert_Months_To_Days_And_Adds_To_Days()
+        {
+            var trav = new TravelTDD();
+            var result = trav.TotalTravelTime(11, 9, 2018);
+            Assert.That(result, Is.EqualTo(61));
+        }
     }
 }
